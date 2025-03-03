@@ -112,10 +112,20 @@
 			margin-left: 1vw;
 			padding: 2vh;
 			border: none;
+			margin-top: 1vw;
 		}
 		label{
 			font-size: 200%;
 			font-weight: bold;
+			margin-top: 1vw;
+		}
+		select{
+			font-size: 100%;
+			border-radius: 2vh;
+			margin-left: 1vw;
+			padding: 2vh;
+			border: none;
+			margin-top: 1vw;
 		}
 		.boton{
 			font-size: 150%;
@@ -205,30 +215,39 @@
 				<label for="name">Nombre</label>
 				<input type="text" name="name" id="name" placeholder="Name" size="15" maxlength="15" title="Nombre sobre el que se realizará el pedido" required>
 
-				<label for="name" style="margin-left:5%">Apellido</label>
+				<label for="name" style="margin-left:1vw">Apellido</label>
 				<input type="text" name="name" id="" placeholder="Last name" size="20" maxlength="20" title="Apellido del nombre regisrado">
 
-				<label for="producto" style="margin-left:5%">Producto</label>
-				<!--<input type="text" name="producto" placeholder="Product" size="10" title="Producto a elegir" required>
+				<label for="producto" style="margin-left:1vw">Producto</label>
+				<!--<input type="text" name="producto" placeholder="Product" size="10" title="Producto a elegir" required>-->
 
-				<select name="producto" size="1" multiple required>
+				<select name="producto" size="1" required style="width:11em">
 					<option>Shampoo</option>
 					<option>Acondicionador</option>
 					<option>Mascarilla Capilar</option>
 				</select>
-				-->
-				<input type="text" list="opciones" name="producto" size="15" placeholder="Product" title="Producto a elegir" required>
+				
+				<!--<input type="text" list="opciones" name="producto" size="12" placeholder="Product" title="Producto a elegir" required>
 				<datalist id="opciones">
 					<option>Shampoo</option>
 					<option>Acondicionador</option>
 					<option>Mascarilla</option>
-				</datalist>
+				</datalist>-->
 
 				<br>
 
 				<label for="city">Ciudad</label>
 				<!--<input type="text" name="city" placeholder="City" size="20" title="Ciudad de destino" required>-->
-				<input type="text" list="ciudades" name="city" placeholder="City" size="20" title="Ciudad de destino" required>
+				<select name="city" size="1" required style="width:11em">
+					<option>San Luís Potosí</option>
+					<option>Querétaro</option>
+					<option>Guadalajara</option>
+					<option>CDMX</option>
+					<option>Monterrey</option>
+					<option>Guanajuato</option>
+				</select>
+
+				<!--<input type="text" list="ciudades" name="city" placeholder="City" size="20" title="Ciudad de destino" required>
 				<datalist id="ciudades">
 					<option>San Luís Potosí</option>
 					<option>Querétaro</option>
@@ -236,12 +255,12 @@
 					<option>CDMX</option>
 					<option>Monterrey</option>
 					<option>Guanajuato</option>
-				</datalist>
+				</datalist>-->
 
-				<label for="colonia" style="margin-left:5%">Colonia</label>
+				<label for="colonia" style="margin-left:1vw">Colonia</label>
 				<input type="text" name="colonia" placeholder="Suburb" size="25" title="Nombre de la Colonia" maxlength="30">
 
-				<label for="cp" style="margin-left:5%">C.P</label>
+				<label for="cp" style="margin-left:1vw">C.P</label>
 				<input type="number" name="cp" placeholder="PostCode" title="Código Postal" min="10000" max="99999" style="width:5.3em">
 
 				<br>
