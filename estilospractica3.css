@@ -1,0 +1,43 @@
+body{
+	/*background-color: #C599B6;*/
+	background-color: #FFF7F3;
+}
+table{
+	width: 100%;
+	border: 2px solid white;
+	/*border: 2px solid #C599B6;*/
+	border-collapse: collapse;/*Une los bordes*/
+	font-family: arial, verdana, sans-serif;/*se separan con comas las diferentes fuentes en caso de que no se encuentre una fuente en un navegador*/
+	caption-side: top;
+	margin: auto;
+}
+
+th,td{
+	border: 2px solid white;
+	/*border: 2px solid #C599B6;*/
+}
+th{
+	padding: 15px;
+
+}
+td{
+	padding: 5px;
+	text-align: justify;
+}
+table tr:nth-child(odd){/*Para todos los hijos tr de table que sean impares*/
+	background-color: #EABDE6;
+}
+table tr:nth-child(even){/*Para todos los hijos tr de table que sean pares*/
+	background-color: #FFDFEF;
+}
+tr th{/*para todos los th de tr*/
+	background-color: #D69ADE;
+	color: white;
+}
+table tr:hover{
+	background-color: #A35C7A;
+	color: white;
+}
+/*li a{
+
+}*/
