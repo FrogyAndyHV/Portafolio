@@ -1,0 +1,38 @@
+ul{
+	list-style-type: none;
+	width: 40%;
+	/*background-color: blue;*/
+	
+	padding: 0;
+	margin: auto;
+	display: flex;
+}
+li{
+	width: 100%;
+	text-align: center;
+}
+li a{
+	display: block;/*Para que el hiervinculo no sea solamente sobre el texto y esté sobre todo el bloque*/
+	background: #A8CD89;
+	padding: 12px;
+	text-decoration: none;
+	font-family: arial, verdana;
+	/*float: left;*/
+	/*width: 22.5%;*/
+}
+li a:hover{
+	background-color: #355F2E;
+	color: white;
+}
+li a:focus{
+	background-color: black;
+	color: white;
+}
+li a.activo{
+	background-color: black;
+	color: white;
+}
+/*li a:hover:not(.activo){
+	background-color: black;
+	color: white;
+}*/
