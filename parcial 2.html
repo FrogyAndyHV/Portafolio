@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Examen Parcial 2</title>
+	<link rel="stylesheet" type="text/css" href="P2E2estilo.css">
+
+</head>
+<body>
+	<h1>Examen Práctico Parcial 2</h1>
+	<h2>Hernández Vázquez Andrea 186102</h2>
+
+	<div id="caja">
+		Mostrar Imágenes
+	</div>
+
+	<div id="contenedor">
+		<div class="contint">
+			<div class="imagenes">
+				<img src="rana1.jfif">
+			</div>
+			<div class="imagenes">
+				<img src="rana2.jpg">
+			</div>
+			<div class="imagenes">
+				<img src="uron3.jpg">
+			</div>
+			<div class="imagenes">
+				<img src="puppy4.jfif">
+			</div>
+
+		</div>
+			
+	</div>
+	
+	<script>
+        const caja = document.getElementById('caja');
+        const contenedor = document.getElementById('contenedor');
+        let isVisible = true;
+
+        caja.addEventListener('mouseenter', () => {
+            isVisible = !isVisible; 
+            contenedor.style.display = isVisible ? 'block' : 'none';
+        });
+    </script>
+
+ 
+</body>
+</html>
