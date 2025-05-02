@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Obtener datos desde formulario con JavaScript</title>
+	<script type="text/javascript" src="leerform.js"></script>
+	<style type="text/css">
+		body{
+			background-color: #FCEFCB;
+
+		}
+		h1{
+			background-color: #A86523;
+			color: white;
+			padding: 20px;
+			text-align: center;
+			width: 25%;
+			border-radius: 4vh;
+			margin: auto;
+		}
+		form{
+			background-color: #FAD59A;
+			width: 80%;
+			border-radius:10vh;
+			padding: 05%;
+			font-size: 200%;
+			border: solid white 10px;
+			margin-top: 10vh;
+			margin: auto;
+			text-align: center;
+		}
+		div{
+			margin-top: 10vh;
+		}
+		input{
+			background-color: white;
+			border-radius: 4vh;
+			padding: 10px;
+			border: none;
+		}
+		.terminos{
+			font-size: 50%;
+		}
+		select{
+			background-color: white;
+			border-radius: 4vh;
+			padding: 10px;
+			border: none;
+		}
+		.boton{
+			background-color: #E9A319;
+		}
+		#datos{
+			height: 300px;
+			background-color: white;
+			border-radius: 10vh;
+			border: solid #FAD59A 10px;
+			font-size: 200%;
+			padding: 20px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Registro de usuario</h1>
+	<div>
+		
+	</div>
+	<form name="formulario">
+		<label for="user">Nombre de Usuario:</label>
+		<input type="text" name="user" id="user" placeholder="Usuario">
+		<br>
+
+		<label for="pass">Contraseña:</label>
+		<input type="password" name="pass" id="pass" placeholder="Contraseña">
+		<br>
+
+		<label for="carrera">Carrera:</label>
+		<select name="carrera" id="carrera">
+			<option value="ITI">Ing. Tec. Información</option>
+			<option value="ITEM">Ing. Telemática</option>
+		</select>
+		<br>
+
+		<label for="genero">Género:</label>
+		<br>
+		<input type="radio" name="genero" id="genero" value="f">
+		Femenino
+		<br><!--se llaman igual para que se seleccione uno u otro-->
+		<input type="radio" name="genero" id="genero" value="m">
+		Masculino
+		<br>
+
+		
+		<label for="privacidad" class="terminos">Acepto los términos y condiciones de uso y privacidad</label>
+		<br>
+		<input type="checkbox" name="privacidad" id="privacidad">
+		<br>
+
+		<input type="button" name="envio" id="envio" value="Obtener datos" onclick="leer()" class="boton">
+	</form>
+
+	<div id="datos">
+
+	</div>
+</body>
+</html>
