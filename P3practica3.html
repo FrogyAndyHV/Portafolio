@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Formularios</title>
+  <link rel="stylesheet" type="text/css" href="ep3practica3.css">
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="jspdf/js/jquery/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="jspdf/js/jquery/jquery-ui-1.8.17.custom.min.js"></script>
+    <script type="text/javascript" src="jspdf/jspdf.js"></script>
+
+    <script type="text/javascript" src="jspdf/jspdf.plugin.addimage.js"></script>
+
+    <script type="text/javascript" src="jspdf/jspdf.plugin.standard_fonts_metrics.js"></script>
+    <script type="text/javascript" src="jspdf/jspdf.plugin.split_text_to_size.js"></script>
+    <script type="text/javascript" src="jspdf/jspdf.plugin.from_html.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet"> 
+    </head>
+<body>
+  <h1>¿Cuánto sabes de Betty la Fea?</h1>
+
+  <form name="formulario" id="formulario">
+    <!-- Pregunta 1 -->
+    <label for="q1">1. ¿Cuál es el nombre completo de Betty?</label><br>
+    <input type="radio" name="q1" value="1"> Beatriz Aurora Pinzón Solano<br>
+    <input type="radio" name="q1" value="0"> Beatriz Elena Suárez Mejía<br>
+    <input type="radio" name="q1" value="0"> Beatriz Marcela Córdoba Pinzón<br>
+
+    <!-- Pregunta 2 -->
+    <label for="q2">2. ¿Cómo se llama la empresa donde trabaja Betty?</label><br>
+    <input type="radio" name="q2" value="0"> Moda Total S.A.<br>
+    <input type="radio" name="q2" value="1"> Ecomoda S.A.<br>
+    <input type="radio" name="q2" value="0"> Fashion Group Internacional<br>
+
+    <!-- Pregunta 3 -->
+    <label for="q3">3. ¿Quién es el mejor amigo de Betty en la novela?</label><br>
+    <input type="radio" name="q3" value="0"> Armando Mendoza<br>
+    <input type="radio" name="q3" value="1"> Nicolás Mora<br>
+    <input type="radio" name="q3" value="0"> Hugo Lombardi<br>
+
+    <!-- Pregunta 4 -->
+    <label for="q4">4. ¿Dónde ocurre la novela original?</label><br>
+    <input type="radio" name="q4" value="0"> México<br>
+    <input type="radio" name="q4" value="1"> Colombia<br>
+    <input type="radio" name="q4" value="0"> Estados Unidos<br>
+
+    <!-- Pregunta 5 -->
+    <label for="q5">5. ¿Quién es el interés romántico principal de la protagonista?</label><br>
+    <input type="radio" name="q5" value="0"> Daniel Valencia<br>
+    <input type="radio" name="q5" value="0"> Felipe Calderon<br>
+    <input type="radio" name="q5" value="1"> Armando Mendoza<br>
+
+    <button type="button" onclick="calcularResultado()">Enviar</button>
+  </form>
+
+  <h2 style="margin: auto">Resultados:</h2>
+  <div id="datos"></div>
+
+  <h2>Descarga tus resultados:</h2>
+  <div id="pdf">
+    <input type="button" name="boton" id="boton" value="Generar PDF" onclick="generar()">
+    <br>
+
+    <iframe src="" frameborder="0" width="500" height="600">
+    </iframe>
+  </div>
+  <script>
+    // Cargar Google Charts
+    google.charts.load('current', {packages: ['corechart']});
+
+    function calcularResultado() {
+      const form = document.getElementById('formulario');
+      const respuestas = new FormData(form);
+      let puntajes = [];
+      let total = 0;
+
+      // Recorrer 5 preguntas
+      for (let i = 1; i <= 5; i++) {
+        const val = parseInt(respuestas.get(`q${i}`) || 0);
+        puntajes.push(val);
+        total += val;
+      }
+
+      // Mostrar puntaje total en pantalla
+      document.getElementById("datos").innerHTML = `
+        <p>Su puntaje total fue de ${total} de 5 preguntas.</p>
+        <div id="grafico"></div>
+      `;
+
+      // Dibujar gráfico
+      google.charts.setOnLoadCallback(() => dibujarGrafico(puntajes));
+    }
+
+    function dibujarGrafico(puntajes) {
+      const data = google.visualization.arrayToDataTable([
+        ['Pregunta', 'Puntaje'],
+        ['Pregunta 1', puntajes[0]],
+        ['Pregunta 2', puntajes[1]],
+        ['Pregunta 3', puntajes[2]],
+        ['Pregunta 4', puntajes[3]],
+        ['Pregunta 5', puntajes[4]]
+      ]);
+
+      const options = {
+        title: 'Resultados del Quiz',
+        legend: { position: 'none' },
+        hAxis: {
+          minValue: 0,
+          maxValue: 1
+        },
+        colors: ['#1e88e5']
+      };
+
+      const chart = new google.visualization.BarChart(document.getElementById('grafico'));
+      chart.draw(data, options);
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+  // Asegúrate de que esto se ejecuta después de calcular el resultado
+  async function generar() {
+    const { jsPDF } = window.jspdf;
+
+    // Obtener el resultado del DOM (como lo mostramos antes)
+    const resultadoTexto = document.getElementById('datos').innerText;
+
+    // Crear PDF
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+    doc.text("Resultado del Quiz:", 20, 30);
+    doc.setFontSize(12);
+    doc.text(resultadoTexto, 20, 40);
+
+    // Mostrar en iframe
+    const string = doc.output('datauristring');
+    document.querySelector('iframe').setAttribute('src', string);
+  }
+</script>
+</body>
+</html>
