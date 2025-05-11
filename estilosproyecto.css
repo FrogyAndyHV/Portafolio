@@ -305,3 +305,130 @@ footer a:hover{
 video{
 	width: 65%;
 }
+.sub{
+	background-color: ;
+	text-align: center;
+	font-size: 200%;
+	margin: 0;
+	color: #FF7D29;
+	font-family: Agbalumo;
+	padding: 0;
+}
+hr{
+	background-color: #FF7D29;
+	height: 4px;
+}
+/*.imagenes {
+	width: 100%;
+  display: flex;
+}
+.imagenes > div {
+	display: inline-block;
+  width:20%;
+}*/
+.imagenes {
+  width:100%;
+  display: flex;
+	flex-flow: row wrap;
+	justify-content: space-around;
+}
+.imagenes div {
+	margin: auto;
+	text-align: center;
+  width: 30%;
+  float:none;
+  margin-bottom: 5vh;
+	font-size: 120%;
+}
+table{
+	margin: auto;
+	text-align: center;
+	width: 70%;
+	border: solid #FF7D29 2px;
+	border-radius: 4px;
+}
+tr{
+	border: solid #FF7D29 2px;
+	border-radius: 4px;
+}
+th{
+	border: solid #FF7D29 2px;
+	border-radius: 4px;
+	text-align: center;
+}
+from{
+	width: 70%;
+	margin: auto;
+}
+fieldset{
+	border: solid #FF7D29 4px;
+	border-radius: 6px;
+	width: 50%;
+	margin: auto;
+}
+legend{
+	color: #c88a0e;
+	font-size: 200%;
+}
+label{
+	font-size: 1em;
+	font-family: Georgia, serif;
+}
+input[type=text]{
+	width: 98%;
+	border: solid #FF7D29 2px;
+	border-radius: 6px;
+	background: linear-gradient(#efc3a6, #faf0a2);
+}
+input[type=email]{
+	width: 98%;
+	border: solid #FF7D29 2px;
+	border-radius: 6px;
+	background: linear-gradient(#efc3a6, #faf0a2);
+}
+input[type=number]{
+	width: 98%;
+	border: solid #FF7D29 2px;
+	border-radius: 6px;
+	background: linear-gradient(#efc3a6, #faf0a2);
+}
+select{
+	width: 98%;
+	border: solid #FF7D29 2px;
+	border-radius: 6px;
+	background: linear-gradient(#efc3a6, #faf0a2);
+}
+input[type=date]{
+	width: 98%;
+	border: solid #FF7D29 2px;
+	border-radius: 6px;
+	background: linear-gradient(#efc3a6, #faf0a2);
+}
+input[type=time]{
+	width: 98%;
+	border: solid #FF7D29 2px;
+	border-radius: 6px;
+	background: linear-gradient(#efc3a6, #faf0a2);
+}
+input[type=submit] {
+	width: 30%;
+	margin-left: 15%;
+	border: solid white 2px;
+	border-radius: 6px;
+	background-color: #8acdf3;
+ 	accent-color: #8acdf3 ;
+ 	color: white;
+ 	font-size: 1.1em;
+	font-family: Georgia, serif;
+}
+input[type=reset] {
+	width: 30%;
+	margin-left: 15%;
+	border: solid white 2px;
+	border-radius: 6px;
+	background-color: #8acdf3 ;
+ 	accent-color: #8acdf3 ;
+ 	color: white;
+ 	font-size: 1.1em;
+	font-family: Georgia, serif;
+}
