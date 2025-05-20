@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Parcial 3</title>
+	<link rel="stylesheet" type="text/css" href="P3estilosp3.css">
+	<script type="text/javascript" src="P3javap3.js">		
+	</script>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Agbalumo&display=swap" rel="stylesheet">
+</head>
+<body>
+	<h1>Parking check</h1>
+	<div id="salto">
+		
+	</div>
+	<form>
+		<label for="horas">Horas de estacionamiento</label>
+		<br>
+
+		<input type="text" name="horas" id="horas" placeholder="Escribe un número" required>
+		<br>
+
+		<label for="auto">Tipo de auto </label>
+		<select name="auto" id="auto">
+			<option value="1">Auto Chico</option>
+			<option value="2">Camioneta</option>
+			<option value="3">Camión</option>
+		</select>
+		<br>
+
+		
+		<input type="button" name="total" id="total" value="Total" onclick="calculo()">
+		
+	</form>
+	<div id="salto">
+		
+	</div>	
+	<div>
+		<h2>Total a pagar:</h2>	
+		<p id="resultado"></p>
+	</div>
+	<footer>
+		Realizado por: 186102 Hernández Vázquez Andrea
+		<br>
+		Universidad Politécnica de San Luis Potosí
+	</footer>
+</body>
+</html>
