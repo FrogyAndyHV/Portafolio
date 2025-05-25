@@ -210,6 +210,14 @@ p{
 	margin-top: 7vh;
 	margin-bottom: 7vh;
 	height: 400px;
+	overflow: hidden;
+}
+#textoizquierda iframe {
+    width: 100%;       /* El iframe ocupará el 100% del ancho del contenedor */
+    height: 100%;      /* La altura será del 100% del contenedor */
+    max-width: 100%;   /* Evita que el iframe se salga del contenedor */
+    max-height: 100%;  /* Limita la altura del iframe al 100% del contenedor */
+    border: none;      /* Elimina el borde, si no lo deseas */
 }
 .textizq1{
 	width: 50%;
@@ -348,6 +356,33 @@ footer a:hover{
 	color: #2C2C2C;
 	font-weight: bolder;
 }
+#dudas input[type=button]:hover{
+
+	background: black;
+	color: white;
+
+}
+#comentario-publicado {
+    padding: 15px;
+   background: #F8F4E1;
+	border: solid white 8px;
+    border-radius: 6vh;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#comentario-publicado h3 {
+    color: #FCB454;
+}
+
+#comentario-publicado p {
+    font-size: 16px;
+    line-height: 1.5;
+}
 /*Videoo*/
 video{
 	width: 65%;
@@ -370,6 +405,7 @@ hr{
   display: flex;
 	flex-flow: row wrap;
 	justify-content: space-around;
+
 }
 .imagenes div {
 	margin: auto;
@@ -378,6 +414,39 @@ hr{
   float:none;
   margin-bottom: 5vh;
 	font-size: 120%;
+	overflow: hidden;
+	display: flex;
+    flex-wrap: wrap;  /* Permite que los elementos se envuelvan en líneas si no caben */
+/* Espacio entre los elementos */
+    justify-content: center;  /* Centra los elementos en la fila */
+
+}
+.sh {
+    flex: 1 1 30%;  /* Asegura que cada "sh" ocupe un 30% del ancho disponible en pantallas grandes */
+    text-align: center;  /* Centra el texto debajo de la imagen */
+    margin: 10px 0;  /* Espacio alrededor de las imágenes */
+}
+
+.sh img {
+    width: 100%;  /* Hace que las imágenes ocupen todo el ancho de su contenedor */
+    height: auto;  /* Mantiene la proporción de la imagen */
+    border-radius: 8px;  /* Bordes redondeados en las imágenes */
+}
+
+.sh h3 {
+    font-size: 18px;  /* Tamaño de fuente ajustado */
+    margin-top: 10px;  /* Espacio entre la imagen y el título */
+}
+
+/* Responsividad para pantallas pequeñas (móviles) */
+@media screen and (max-width: 768px) {
+    .sh {
+        flex: 1 1 100%;  /* En pantallas pequeñas, cada "sh" ocupará el 100% del ancho */
+    }
+
+    .sh h3 {
+        font-size: 16px;  /* Ajusta el tamaño del texto en pantallas pequeñas */
+    }
 }
 table{
 	margin: auto;
@@ -443,7 +512,7 @@ select{
 
 input[type=button] {
 	width: auto;
-	padding: 20px;
+	padding: 1em;
 	margin: 0 auto;
 	display: block;
 	border: none;
@@ -451,7 +520,7 @@ input[type=button] {
 	background: #FFF085;
  	accent-color: #9EC6F3;
  	color: #2C2C2C;
- 	font-size: 150%;
+ 	font-size: 2em;
 	font-family: Agbalumo;
 
 }
@@ -589,6 +658,15 @@ li{
     #cuerpo h3 {
         font-size: 200%;
     }
+    #cuerpo h1 {
+        font-size: 200%;
+    }
+    input[type="button"] {
+        font-size: 10vw; /* Disminuye el tamaño de la fuente en pantallas pequeñas */
+        padding: 10px;
+        width:auto; /* Ajusta el padding */
+        display: inline-block;
+    }
     
     p {
         font-size: 100%;
@@ -633,6 +711,10 @@ li{
     
     #cuerpo h3 {
         font-size: 150%;
+    }
+     input[type="button"] {
+        font-size: 10vw; /* Disminuye el tamaño de la fuente en pantallas pequeñas */
+        display: inline-block;
     }
     
     p {
@@ -733,5 +815,6 @@ img {
     
     input[type=button] {
         width: 80%;
+        font-size: 100%;
     }
 }
